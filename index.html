@@ -9,9 +9,99 @@
     <!-- bootstrap link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- bootstrap cdn icon link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 </head>
 
 <body>
+    <!-- header part start -->
+    <header class="container mt-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">cooking master</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Riceps</a>
+                        </li>
+
+                        <li class="nav-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="bi bi-basket nav-link fw-bolder text-primary"><span class="mx-2"
+                                    id="cartCount">0</span></i>
+
+                            <!-- Button trigger modal -->
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <!-- ai line neya hochai -->
+                                <div class=" modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <!-- here all selected products goes -->
+                                            <div class="modal-body" id="cartProducts"></div>
+
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">conforme order</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- header part end -->
+
+    <!-- section part start -->
+    <section class="container" style="background-color: #f3f3f373">
+        <div class="m-5">
+            <form class="d-flex m-auto w-75">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                    id="input-value" />
+                <button class="btn btn-outline-primary" type="submit" id="submit-btn">
+                    Search
+                </button>
+            </form>
+            <!-- spinner -->
+            <div class="d-flex justify-content-center mt-5 d-none" id="spinner">
+                <div class="spinner-border" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+        <!-- error message -->
+        <div id="error-message"></div>
+
+        <!-- single product ingredients' div -->
+        <div id="product-info"></div>
+
+        <!-- all products div -->
+        <div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="meal-items"></div>
+    </section>
 
 
     <!-- bootstrap bundle link -->
